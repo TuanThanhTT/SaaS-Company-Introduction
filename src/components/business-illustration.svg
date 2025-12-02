@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none" role="img" aria-labelledby="title description">
+    <title id="title">Minh họa Quảng bá Doanh nghiệp SaaS</title>
+    <desc id="description">Hình ảnh trừu tượng thể hiện sự tăng trưởng, kết nối và quản lý doanh nghiệp thông qua hệ thống SaaS, sử dụng màu tím và hồng.</desc>
+
+    <style>
+        /* Keyframes cho animation */
+        @keyframes chart-up {
+            0% { transform: scaleY(0); }
+            100% { transform: scaleY(1); }
+        }
+        @keyframes pulse {
+            0% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 0.7; transform: scale(1); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes line-draw {
+            from { stroke-dashoffset: 1000; }
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* Áp dụng animation */
+        .chart-bar {
+            transform-origin: bottom;
+            animation: chart-up 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+        .main-building {
+            animation: pulse 4s infinite ease-in-out;
+        }
+        .cloud-icon {
+            animation: float 5s infinite ease-in-out;
+        }
+        .animated-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: line-draw 3s ease-out forwards;
+        }
+        .gradient-fill-purple-pink {
+            fill: url(#PurplePinkGradient);
+        }
+        .shadow-glow {
+            filter: drop-shadow(0px 8px 15px rgba(124, 58, 237, 0.4));
+        }
+    </style>
+
+    <defs>
+        <!-- Gradient tím-hồng từ code của bạn: from-purple-600 to-pink-600 -->
+        <linearGradient id="PurplePinkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#9333ea;stop-opacity:1" /> <!-- purple-600 -->
+            <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" /> <!-- pink-600 -->
+        </linearGradient>
+
+        <!-- Gradient nền mờ -->
+        <linearGradient id="BackgroundBlur" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#f5f3ff;stop-opacity:1" /> <!-- purple-50 -->
+            <stop offset="100%" style="stop-color:#fff1f2;stop-opacity:1" /> <!-- pink-50 -->
+        </linearGradient>
+
+        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="15"/>
+            <feOffset dx="0" dy="8"/>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- Nền mờ -->
+    <rect width="800" height="600" fill="url(#BackgroundBlur)"/>
+
+    <!-- Các đường kết nối animation (tính năng hệ thống) -->
+    <path class="animated-line" d="M100 550 C 300 300, 500 450, 700 150" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.3" fill="none"/>
+    <path class="animated-line" style="animation-delay: 0.5s;" d="M50 450 C 250 200, 450 350, 750 100" stroke="#f472b6" stroke-width="1.5" stroke-opacity="0.3" fill="none"/>
+
+    <!-- Khối chính: Hệ thống Quản trị (Building & Screen) -->
+    <g transform="translate(400, 300)">
+        
+        <!-- Tòa nhà/Khối dữ liệu (Cloud/Server) -->
+        <g class="main-building shadow-glow" transform="translate(0, 0)">
+            <rect x="-100" y="-150" width="200" height="200" rx="30" fill="#fff" stroke="#9333ea" stroke-width="4"/>
+            <rect x="-80" y="-130" width="160" height="20" fill="#a78bfa" rx="5"/>
+            <rect x="-80" y="-100" width="160" height="150" fill="#f5f3ff" rx="15"/>
+            
+            <!-- Cửa sổ - Màn hình (Data Display) -->
+            <rect x="-60" y="-80" width="40" height="40" fill="#d8b4fe" rx="10"/>
+            <rect x="20" y="-80" width="40" height="40" fill="#d8b4fe" rx="10"/>
+            
+            <rect x="-60" y="-20" width="40" height="40" fill="#fbcfe8" rx="10"/>
+            <rect x="20" y="-20" width="40" height="40" fill="#fbcfe8" rx="10"/>
+        </g>
+        
+        <!-- Biểu đồ tăng trưởng (Growth Chart) -->
+        <g transform="translate(180, 50) rotate(-10)">
+            <!-- Nền biểu đồ -->
+            <rect x="0" y="-100" width="150" height="150" rx="20" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow)"/>
+            
+            <!-- Thanh Biểu đồ 1 (Animation) -->
+            <rect class="chart-bar gradient-fill-purple-pink" x="20" y="0" width="25" height="40" rx="5" transform="scaleY(1)" style="transform-origin: bottom;"/>
+            
+            <!-- Thanh Biểu đồ 2 (Animation, delay) -->
+            <rect class="chart-bar gradient-fill-purple-pink" x="60" y="-40" width="25" height="80" rx="5" transform="scaleY(1)" style="transform-origin: bottom; animation-delay: 0.3s;"/>
+            
+            <!-- Thanh Biểu đồ 3 (Animation, delay) -->
+            <rect class="chart-bar gradient-fill-purple-pink" x="100" y="-100" width="25" height="140" rx="5" transform="scaleY(1)" style="transform-origin: bottom; animation-delay: 0.6s;"/>
+            
+            <!-- Đường xu hướng (Trend line) -->
+            <polyline points="30 -10, 70 -50, 110 -110" fill="none" stroke="#db2777" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="110" cy="-110" r="8" fill="#db2777" class="main-building" style="animation-duration: 2s;"/>
+        </g>
+        
+        <!-- Icon Cloud - Digital Presence (Floating) -->
+        <g class="cloud-icon shadow-glow" transform="translate(100, -250)">
+            <path d="M 0,0 C -20,-30 -70,-30 -80,0 C -100,20 -70,50 -40,50 C 0,50 10,20 0,0 Z" fill="#fff" stroke="#9333ea" stroke-width="3"/>
+            <circle cx="-50" cy="-20" r="15" fill="#a78bfa"/>
+            <circle cx="-20" cy="10" r="10" fill="#f472b6"/>
+        </g>
+
+    </g>
+</svg>

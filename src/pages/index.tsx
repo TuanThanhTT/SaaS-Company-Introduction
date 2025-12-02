@@ -27,6 +27,12 @@ const ChatBookLanding = ({ onNavigateToChat }: ChatBookLandingProps) => {
       onMouseMove={handleMouseMove}
       ref={landingRef}
     >
+
+
+  
+
+
+
       {/*... các phần tử nền và header khác giữ nguyên ...*/}
       {/* Water Ripple Effect */}
       <div
@@ -59,14 +65,14 @@ const ChatBookLanding = ({ onNavigateToChat }: ChatBookLandingProps) => {
       {/* Animated Gradient Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-96 h-96 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full blur-3xl opacity-20 animate-pulse -top-20 -left-20"></div>
-        <div className="absolute w-80 h-80 bg-gradient-to-r from-sky-300 to-blue-500 rounded-full blur-3xl opacity-15 top-1/4 right-1/4 animate-bounce" style={{animationDuration: '6s'}}></div>
-        <div className="absolute w-72 h-72 bg-gradient-to-r from-cyan-200 to-blue-400 rounded-full blur-2xl opacity-12 bottom-1/4 left-1/3 animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute w-64 h-64 bg-gradient-to-r from-blue-300 to-sky-400 rounded-full blur-2xl opacity-10 bottom-10 right-10 animate-bounce" style={{animationDuration: '8s', animationDelay: '1s'}}></div>
-        <div className="absolute w-48 h-48 bg-gradient-to-br from-white to-cyan-100 rounded-full blur-xl opacity-25 top-1/2 left-1/4 animate-pulse" style={{animationDuration: '4s'}}></div>
-        <div className="absolute w-56 h-56 bg-gradient-to-br from-sky-200 to-blue-300 rounded-full blur-xl opacity-18 top-3/4 right-1/3 animate-bounce" style={{animationDuration: '7s', animationDelay: '3s'}}></div>
+        <div className="absolute w-80 h-80 bg-gradient-to-r from-sky-300 to-blue-500 rounded-full blur-3xl opacity-15 top-1/4 right-1/4 animate-bounce" style={{ animationDuration: '6s' }}></div>
+        <div className="absolute w-72 h-72 bg-gradient-to-r from-cyan-200 to-blue-400 rounded-full blur-2xl opacity-12 bottom-1/4 left-1/3 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute w-64 h-64 bg-gradient-to-r from-blue-300 to-sky-400 rounded-full blur-2xl opacity-10 bottom-10 right-10 animate-bounce" style={{ animationDuration: '8s', animationDelay: '1s' }}></div>
+        <div className="absolute w-48 h-48 bg-gradient-to-br from-white to-cyan-100 rounded-full blur-xl opacity-25 top-1/2 left-1/4 animate-pulse" style={{ animationDuration: '4s' }}></div>
+        <div className="absolute w-56 h-56 bg-gradient-to-br from-sky-200 to-blue-300 rounded-full blur-xl opacity-18 top-3/4 right-1/3 animate-bounce" style={{ animationDuration: '7s', animationDelay: '3s' }}></div>
         <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-cyan-50/80 to-blue-100/60"></div>
       </div>
-      
+
       {/* Header */}
       <nav className="relative z-10 flex items-center px-4 md:px-8 py-6 max-w-7xl mx-auto">
         <div>
@@ -93,7 +99,7 @@ const ChatBookLanding = ({ onNavigateToChat }: ChatBookLandingProps) => {
             <h2 className="text-5xl lg:text-7xl font-light text-gray-800 leading-none">Cuốn Sách</h2>
             <h2 className="text-5xl lg:text-7xl font-bold text-blue-600 leading-none">Yêu Thích</h2>
           </div>
-          <button 
+          <button
             onClick={onNavigateToChat}
             className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-xl font-medium text-lg transition-all duration-200 transform hover:scale-105"
           >
@@ -123,26 +129,26 @@ const ChatBookLanding = ({ onNavigateToChat }: ChatBookLandingProps) => {
       </div>
 
       {/* Render component SettingsButton đã tách ra */}
-      <SettingsButton /> 
-      
+      <SettingsButton />
+
       {/* Floating Chat Button and Settings Button */}
       <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-20">
         <div className="relative group">
-          <button 
+          <button
             onClick={onNavigateToChat}
             className="bg-blue-500 hover:bg-blue-600 text-white p-3 md:p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
           >
-            <svg 
-              className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
               />
             </svg>
             <div className="absolute -top-1 -right-1 md:-top-2 md:-right-2 w-3 h-3 md:w-4 md:h-4 bg-red-500 rounded-full flex items-center justify-center">
@@ -156,7 +162,7 @@ const ChatBookLanding = ({ onNavigateToChat }: ChatBookLandingProps) => {
           </div>
         </div>
       </div>
-      
+
       {/* Floating elements */}
       <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-blue-400 rounded-full opacity-60 animate-pulse z-10 hidden sm:block"></div>
       <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-cyan-400 rounded-full opacity-40 animate-bounce z-10 hidden sm:block"></div>

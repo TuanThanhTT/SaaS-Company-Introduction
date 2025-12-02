@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+
+  <defs>
+    <linearGradient id="glassBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e0ff"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ff4dcf"/>
+    </linearGradient>
+
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e0ff"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ff4dcf"/>
+    </linearGradient>
+
+    <linearGradient id="textGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff8a00"/>
+      <stop offset="50%" stop-color="#ff3c7f"/>
+      <stop offset="100%" stop-color="#b84dff"/>
+    </linearGradient>
+
+    <linearGradient id="subTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e3a8a"/> <stop offset="100%" stop-color="#4c1d95"/> </linearGradient>
+
+    <filter id="neonGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="28" result="blur"/>
+      <feFlood flood-color="#a45dfd" flood-opacity="0.65"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="20" stdDeviation="26" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+
+    <filter id="inner3d">
+      <feOffset dx="0" dy="3"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur" result="inverse"/>
+      <feFlood flood-color="#000" flood-opacity="0.1"/> <feComposite operator="in" in2="inverse"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+      <rect width="1200" height="360" rx="30"
+            fill="rgba(255, 255, 255, 0.85)" 
+            stroke="url(#glassBorder)" 
+            stroke-width="2"/>
+  </g>
+
+  <g transform="translate(200,180) scale(0.75)">
+
+    <rect x="-120" y="-190" width="360" height="360" rx="70"
+          fill="none" filter="url(#neonGlow)" opacity="0.5"/>
+
+    <rect x="-120" y="-150" width="300" height="300" rx="42"
+          fill="#ffffff" stroke="url(#borderGrad)" stroke-width="9"
+          filter="url(#shadow)"/>
+
+    <rect x="-100" y="-128" width="256" height="256" rx="32"
+          fill="#f8fafc" filter="url(#inner3d)"/>
+
+    <g filter="url(#neonGlow)" transform="translate(0,5)">
+      <path d="
+        M -70 -80 L -10 -80 Q 40 -80 40 -40 Q 40 0 -10 0 L -70 0 Z
+        M -10 0 Q 40 0 40 40 Q 40 80 -10 80 L -70 80 Z"
+        fill="none" stroke="url(#grad)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 60 -80 L 130 -80 L 60 80 L 130 80"
+        fill="none" stroke="url(#grad)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <text x="650" y="180" text-anchor="middle"
+        font-family="Inter, SF Pro Display, system-ui"
+        font-size="95" font-weight="800"
+        fill="url(#textGrad2)"
+        letter-spacing="4"
+        filter="url(#inner3d)">
+    BizLanding
+  </text>
+
+  <text x="650" y="255" text-anchor="middle"
+        font-family="Inter, SF Pro Display, system-ui"
+        font-size="42" font-weight="600"
+        fill="url(#subTextGrad)" 
+        letter-spacing="2"
+        opacity="0.9">
+    Kiến Tạo Doanh Nghiệp
+  </text>
+
+</svg>
